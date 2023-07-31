@@ -62,12 +62,14 @@ class ShortsPage extends StatelessWidget {
                         padding: EdgeInsets.fromLTRB(12, 0, 8, 0),
                         child: CircleAvatar(
                           radius: 15,
-                          child: Icon(Icons.person,color: Colors.white,size: 17),
+                          child:
+                              Icon(Icons.person, color: Colors.white, size: 17),
                         ),
                       ),
                       Text(
                         "@Hosivay",
-                        style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                            color: Colors.white, fontWeight: FontWeight.bold),
                       )
                     ],
                   ),
@@ -103,9 +105,9 @@ class ShortsPage extends StatelessWidget {
   // ignore: non_constant_identifier_names
   Widget btn_Shorts(
       {required IconData icon, Function()? onTap, required String title}) {
-    return Container(
-      width: 85,
-      height: 85,
+    return SizedBox(
+      width: 50,
+      height: 75,
       child: Column(
         children: [
           IconButton(
@@ -113,14 +115,14 @@ class ShortsPage extends StatelessWidget {
               icon: Icon(
                 icon,
                 color: Colors.white,
-                size: 31,
+                size: 29,
               )),
           const SizedBox(
             height: 5,
           ),
           Text(
             title,
-            style: const TextStyle(color: Colors.white, fontSize: 15),
+            style: const TextStyle(color: Colors.white, fontSize: 14),
           )
         ],
       ),
