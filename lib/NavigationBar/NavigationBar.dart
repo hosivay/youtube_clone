@@ -43,8 +43,8 @@ class _NavPageState extends State<NavPage> {
           : AppBar(
               title: Image.network(
                 "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCa4EDbkI8ATSXs7s-ovSP2cX_Qfw06aSRWA&usqp=CAU",
-                width: 105,
-                height: 35,
+                width: 90,
+                height: 30,
               ),
               backgroundColor: Theme.of(context).scaffoldBackgroundColor,
               foregroundColor: Colors.black,
@@ -52,11 +52,11 @@ class _NavPageState extends State<NavPage> {
               actions: [
                 IconButton(
                   onPressed: () {},
-                  icon: const Icon(Icons.monitor),
+                  icon: const Icon(Icons.cast),
                 ),
                 IconButton(
                   onPressed: () {},
-                  icon: const Icon(Icons.notifications_none),
+                  icon: const Icon(Icons.notifications_outlined),
                 ),
                 IconButton(
                   onPressed: () {},
@@ -65,7 +65,7 @@ class _NavPageState extends State<NavPage> {
                 const Padding(
                   padding: EdgeInsets.all(8.0),
                   child: CircleAvatar(
-                    radius: 14,
+                    radius: 12,
                     child: Icon(Icons.person, size: 15),
                   ),
                 ),
@@ -73,7 +73,7 @@ class _NavPageState extends State<NavPage> {
             ),
       body: _pages[_currentIndex],
       bottomNavigationBar: Container(
-        height: 56.0,
+        height: 48.0,
         color: _currentIndex == 1 ? Colors.grey.shade900 : Colors.white,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -87,17 +87,18 @@ class _NavPageState extends State<NavPage> {
             CircleAvatar(
               backgroundColor:
                   _currentIndex == 1 ? Colors.white : Colors.grey.shade900,
-              radius: 20,
+              radius: 17,
               child: CircleAvatar(
-                  radius: 19,
-                  backgroundColor:
-                      _currentIndex == 1 ? Colors.grey.shade900 : Colors.white,
+                  radius: 16,
+                  backgroundColor: _currentIndex == 1
+                      ? Color.fromARGB(255, 12, 12, 12)
+                      : Colors.white,
                   child: Icon(
                     Icons.add,
                     color: _currentIndex == 1
                         ? Colors.white
                         : Colors.grey.shade900,
-                    size: 35,
+                    size: 30,
                   )),
             ),
             navItem(
@@ -130,7 +131,7 @@ class _NavPageState extends State<NavPage> {
           children: [
             Icon(_currentIndex == index ? iconFill : icon,
                 color: _currentIndex == 1 ? Colors.white : Colors.grey.shade900,
-                size: 28,
+                size: 26,
                 weight: 200),
             const SizedBox(
               height: 5,

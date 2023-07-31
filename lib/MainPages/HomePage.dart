@@ -68,7 +68,7 @@ Widget videoWidget({
         children: [
           Container(
             width: MediaQuery.of(context).size.width,
-            height: 240,
+            height: 235,
             color: Colors.red,
             child: Image.network(
               thumbnail,
@@ -118,7 +118,11 @@ Widget videoWidget({
                         ),
                         Row(
                           children: [
-                            Text("$channelName . $view views . 12 days ago"),
+                            Text(
+                              "$channelName . $view views . 12 days ago",
+                              style: TextStyle(
+                                  color: Colors.grey.shade600, fontSize: 12),
+                            ),
                           ],
                         )
                       ],
@@ -126,7 +130,11 @@ Widget videoWidget({
                   ],
                 ),
                 const Spacer(),
-                IconButton(onPressed: () {}, icon: const Icon(Icons.more_vert))
+                IconButton(
+                  onPressed: () {},
+                  icon: const Icon(Icons.more_vert),
+                  iconSize: 17,
+                )
               ],
             ),
           ),
@@ -149,7 +157,7 @@ Widget tabbarItems(
           color:
               darkColor == true ? Colors.grey.shade700 : Colors.grey.shade200,
           child: Padding(
-            padding: const EdgeInsets.fromLTRB(12, 8, 12, 8),
+            padding: const EdgeInsets.fromLTRB(10, 6, 10, 6),
             child: isCompass == true
                 ? const Icon(CupertinoIcons.compass)
                 : Text(
@@ -158,7 +166,7 @@ Widget tabbarItems(
                         color: darkColor == true
                             ? Colors.grey.shade200
                             : Colors.grey.shade800,
-                        fontSize: 17,
+                        fontSize: 15,
                         fontWeight: FontWeight.w400),
                   ),
           ),
