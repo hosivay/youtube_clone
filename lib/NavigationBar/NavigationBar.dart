@@ -181,21 +181,77 @@ class _NavPageState extends State<NavPage> {
               index: 1,
               icon: Icons.play_circle_outline,
               iconFill: Icons.play_circle),
-          CircleAvatar(
-            backgroundColor:
-                _currentIndex == 1 ? Colors.white : Colors.grey.shade900,
-            radius: 17,
+          InkWell(
+            onTap: () {
+              showModalBottomSheet(
+                shape: const RoundedRectangleBorder(
+                  borderRadius: BorderRadius.vertical(
+                    top: Radius.circular(20.0),
+                  ),
+                ),
+                context: context,
+                builder: (context) {
+                  return SizedBox(
+                    height: MediaQuery.sizeOf(context).height / 2,
+                    child: Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            const Padding(
+                              padding: EdgeInsets.fromLTRB(12, 0, 0, 0),
+                              child: Text(
+                                "Create",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 27),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: IconButton(
+                                  onPressed: () {
+                                    Navigator.pop(context);
+                                  },
+                                  icon: const Icon(
+                                    Icons.close,
+                                    size: 30,
+                                  )),
+                            )
+                          ],
+                        ),
+                        bottomSheet_btn(
+                            icon: Icons.play_circle_outline,
+                            title: "Create a Short"),
+                        bottomSheet_btn(
+                            icon: Icons.arrow_circle_up,
+                            title: "Upload a video"),
+                        bottomSheet_btn(
+                            icon: Icons.wifi_tethering_sharp, title: "Go live"),
+                        bottomSheet_btn(
+                            icon: Icons.create, title: "Create a post"),
+                      ],
+                    ),
+                  );
+                },
+              );
+            },
             child: CircleAvatar(
-                radius: 16,
-                backgroundColor: _currentIndex == 1
-                    ? const Color.fromARGB(255, 12, 12, 12)
-                    : Colors.white,
-                child: Icon(
-                  Icons.add,
-                  color:
-                      _currentIndex == 1 ? Colors.white : Colors.grey.shade900,
-                  size: 30,
-                )),
+              backgroundColor:
+                  _currentIndex == 1 ? Colors.white : Colors.grey.shade900,
+              radius: 17,
+              child: CircleAvatar(
+                  radius: 16,
+                  backgroundColor: _currentIndex == 1
+                      ? const Color.fromARGB(255, 12, 12, 12)
+                      : Colors.white,
+                  child: Icon(
+                    Icons.add,
+                    color: _currentIndex == 1
+                        ? Colors.white
+                        : Colors.grey.shade900,
+                    size: 30,
+                  )),
+            ),
           ),
           navItem(
               index: 2,
@@ -205,6 +261,36 @@ class _NavPageState extends State<NavPage> {
               index: 3,
               icon: Icons.video_library_outlined,
               iconFill: Icons.video_library),
+        ],
+      ),
+    );
+  }
+
+  // ignore: non_constant_identifier_names
+  Padding bottomSheet_btn({
+    required IconData icon,
+    required String title,
+  }) {
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(10, 20, 0, 0),
+      child: Row(
+        children: [
+          CircleAvatar(
+            backgroundColor: Colors.grey.shade200,
+            radius: 32,
+            child: Icon(
+              icon,
+              color: Colors.black,
+              size: 30,
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: Text(
+              title,
+              style: const TextStyle(fontSize: 18),
+            ),
+          )
         ],
       ),
     );
