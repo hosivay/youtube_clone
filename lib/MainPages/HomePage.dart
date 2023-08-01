@@ -29,23 +29,20 @@ class HomePage extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
-              width: MediaQuery.sizeOf(context).width,
-              height: MediaQuery.sizeOf(context).height * 5,
-              child: ListView.builder(
-                itemCount: listVideos.length,
-                physics: const NeverScrollableScrollPhysics(),
-                itemBuilder: (context, index) {
-                  return videoWidget(
-                    context: context,
-                    thumbnail: listVideos[index]["thumbnail"],
-                    titleVideo: listVideos[index]["titleVideo"],
-                    profile: listVideos[index]["profile"],
-                    channelName: listVideos[index]["channelName"],
-                    view: listVideos[index]["view"],
-                  );
-                },
-              ),
+            ListView.builder(
+              shrinkWrap: true,
+              itemCount: listVideos.length,
+              physics: const NeverScrollableScrollPhysics(),
+              itemBuilder: (context, index) {
+                return videoWidget(
+                  context: context,
+                  thumbnail: listVideos[index]["thumbnail"],
+                  titleVideo: listVideos[index]["titleVideo"],
+                  profile: listVideos[index]["profile"],
+                  channelName: listVideos[index]["channelName"],
+                  view: listVideos[index]["view"],
+                );
+              },
             )
           ],
         ),

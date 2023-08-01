@@ -184,5 +184,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.1.4"
+  we_slide:
+    dependency: "direct main"
+    description:
+      name: we_slide
+      sha256: b1baea1c5be157f69dc5260cdb63ce80927e0f17ff6dbf4ef8d4b162ae3efcf8
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "2.4.0"
 sdks:
   dart: ">=3.0.5 <4.0.0"
